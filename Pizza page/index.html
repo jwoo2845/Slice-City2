@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="main.css" rel="stylesheet">
+    <title>Slice City</title>
+</head>
+<nav>
+    <div class="navlinks">
+    <div><a href="#about">About Us</a></div>
+    <div><a href="#order">Order Now</a></div>
+    </div>
+    <div>
+        <a href="order.html"><img src="images /shoppingcart.png" alt="shopping cart" width="150px"></a>
+    </div>
+    
+    
+</nav>
+<header class="flex-row even-space head">
+    <div class="title">
+        <h1>Slice City</h1>
+        <p style="color: beige;">Where every slice hits different!</p>
+    </div>
+    
+    <video autoplay muted loop playsinline class="bg-video">
+    <source src="images /video.mp4" type="video/mp4">
+    </video>
+
+</header>
+<body>
+    <section>
+        <div class="heading">
+            <h1>Check Out Our Best Sellers</h1>
+        </div>
+        <div class="sig-pizza flex-row">
+
+            <!--Alfredo -->
+            <div class="container">
+                <div class="container-img"><img src="images /alfredo.png" alt="alfredo pizza"></div>
+                <div class="container-heading"><p>Alfredo Pizza</p></div>
+                <div class="container-description">
+                    <p>Creamy Alfredo sauce topped with tender chicken, herbs, and melted cheese.</p>
+                </div>
+                <div class="container-order flex-row">
+                    <div class="price"><p>$12</p></div>
+                    <button class="order-button" type="button" onclick="orderPreset('alfredo')">Order Now</button>
+                </div>
+                
+            </div>
+
+            <!--Pepperoni -->
+            <div class="container">
+                <div class="container-img">
+                    <img src="images /pepperoni.png" alt="pepperoni pizza">
+                </div>
+                <div class="container-heading"><p>Pepperoni Pizza</p></div>
+                <div class="container-description">
+                    <p>Loaded with crispy pepperoni slices and gooey mozzarella on a perfectly baked crust.</p>
+                </div>
+                <div class="container-order flex-row">
+                    <div class="price"><p>$10</p></div>
+                    <button class="order-button" type="button" onclick="orderPreset('pepperoni')">Order Now</button>
+                </div>
+            </div>
+
+            <!--Meatlovers -->
+            <div class="container">
+                <div class="container-img">
+                    <img src="images /meat.png" alt="meatlovers pizza">
+                </div>
+                <div class="container-heading"><p>Meatlovers Pizza</p></div>
+                <div class="container-description">
+                    <p>A hearty combination of sausage, pepperoni, ham, and beef for the ultimate meat feast.</p>
+                </div>
+                    
+                   <div class="container-order flex-row">
+                    <div class="price"><p>$10</p></div>
+                    <button class="order-button" type="button"onclick="orderPreset('meatlovers')">Order Now</button>
+                </div>
+            </div>
+
+            <!--Pineapple -->
+            <div class="container">
+                <div class="container-img">
+                    <img src="images /pineapple.png" alt="pineapple pizza">
+                </div>
+                <div class="container-heading"> <p>Pineapple Pizza</p></div>
+                <div class="container-description">
+                    <p>Sweet pineapple chunks and savory ham layered over melted mozzarella and rich tomato sauce.</p>
+                </div>
+                  <div class="container-order flex-row">
+                    <div class="price"><p>$10</p></div>
+                    <button class="order-button" type="button" onclick="orderPreset('pineapple')">Order Now</button>
+                </div>
+            </div>
+
+            <!--BBQ -->
+            <div class="container">
+                <div class="container-img">
+                    <img src="images /bbq.png" alt="barbeque pizza">
+                </div>
+                <div class="container-heading"><p>Barbeque Pizza</p></div>
+                <div class="container-description">
+                    <p>Grilled chicken, smoky BBQ sauce, and melted cheese topped with fresh onions and peppers.</p>
+                </div>
+                   <div class="container-order flex-row">
+                    <div class="price"><p>$10</p></div>
+                    <button class="order-button" type="button" onclick="orderPreset('barbeque')">Order Now</button>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <section>
+        <div>
+            <h1>Create My Own Pizza</h1>
+        </div>
+    
+        <div class="pizza-builder flex-row">
+        <div class="pizza">
+            <img src="images /toppings/crust.png" class="layer" alt="crust" >
+            <img src="images /sauce.png" class="layer hidden" id="marinara" />
+            <img src="images /alfredo-sauce.png" class="layer hidden" id="alfredo-sauce" />
+            <img src="images /bbq-sauce.png" class="layer hidden" id="bbq-sauce" />
+            <img src="images /light-cheese.png" class="layer hidden" id="light-cheese" />
+             <img src="images /extra-cheese.png" class="layer hidden" id="extra-cheese" />
+            <img src="images /pepperonislice.png" class="layer hidden" id="pepperoni" />
+            <img src="images /mushrooms.png" class="layer hidden" id="mushrooms" />
+            <img src="images /olives.png" class="layer hidden" id="olives" />
+            <img src="images /sausage.png" class="layer hidden" id="sausage" />
+            <img src="images /peppers.png" class="layer hidden" id="peppers" />
+        </div>
+
+        <div class="controls">
+            <form >
+                <div class="flex-row">
+                <label for="small">Small</label>
+                <input type="radio" name="size" value="small">
+                <label for="medium">Medium</label>
+                <input type="radio" name="size" value="medium">
+                <label for="large">Large</label>
+                <input type="radio" name="size" value="large">
+                <label for="xl">Extra Large</label>
+                <input type="radio" name="size" value="xl">
+            </div>
+
+                <select>
+                <option>Choose Crust Type</option>
+                <option>Thin Crust</option>
+                <option>Hand-Tossed</option>
+                <option>Deep Dish</option>
+                <option>Stuffed Crust</option>
+            </select>
+            <select id="sauce" onchange="handleSauceChange()">
+                <option>Choose Sauce</option>
+                <option value="alfredo">Alfredo</option>
+                <option value="bbq">Barbeque</option>
+                <option value="marinara">Marinara Sauce</option>
+            </select>
+
+            <div class="flex-row">
+                <label for="no-cheese">No Cheese:</label>
+                <input type="radio" name="cheese" value="none" onclick="handleCheeseChange()">
+                <label for="regular-cheese">Regular Cheese:</label>
+                <input type="radio" name="cheese" value="light-cheese" onclick="handleCheeseChange()">
+                <label for="ex-cheese">Extra Cheese:</label>
+                <input type="radio" name="cheese" value="extra-cheese"onclick="handleCheeseChange()">
+                </div>
+            <div>
+            <label for="input">Choose your toppings:</label><br><br>
+            <label for="pepperoni">Pepperoni:</label>
+            <input type="checkbox" onchange="toggleIngredient('pepperoni')">
+             <label for="mushrooms">Mushrooms:</label>
+            <input type="checkbox" onchange="toggleIngredient('mushrooms')">
+             <label for="olives">Olives:</label>
+            <input type="checkbox" onchange="toggleIngredient('olives')">
+              <label for="sausage">Sausage:</label>
+            <input type="checkbox" onchange="toggleIngredient('sausage')">
+             <label for="peppers">Peppers:</label>
+            <input type="checkbox" onchange="toggleIngredient('peppers')">
+            </div>
+
+            <textarea rows="3" cols="5" placeholder="Special Requests..."></textarea>
+            <button type="button" onclick="saveCustomOrder()">Review Order</button>
+            </form>
+         
+  </div>
+</div>
+
+    </section>
+        <section>
+        <div class="heading">
+            <h1>Check Out Desserts</h1>
+        </div>
+        <div class="sig-pizza flex-row">
+
+           
+            <div class="container">
+                <div class="container-img"><img src="images /brownie.png" alt="brownie"></div>
+                <div class="container-heading"><p>Brownie</p></div>
+                <div class="container-description">
+                    <p>Rich, fudgy chocolate brownie with a soft center and a slightly crisp top. Perfect for chocolate lovers.</p>
+                </div>
+                <div class="container-order flex-row">
+                    <div class="price"><p>$5</p></div>
+                    <button class="order-button" type="button" onclick="orderPreset('brownie')">Order Now</button>
+                </div>
+                
+            </div>
+
+       
+            <div class="container">
+                <div class="container-img">
+                    <img src="images /strawberry-cake.png" alt="strawberry-cake">
+                </div>
+                <div class="container-heading"><p>Strawberry Cake</p></div>
+                <div class="container-description">
+                    <p>Light and fluffy vanilla cake layered with fresh strawberries and whipped cream frosting.</p>
+                </div>
+                <div class="container-order flex-row">
+                    <div class="price"><p>$6</p></div>
+                    <button class="order-button" type="button" onclick="orderPreset('strawberry-cake')">Order Now</button>
+                </div>
+            </div>
+
+           
+            <div class="container">
+                <div class="container-img">
+                    <img src="images /cookie-cake.png" alt="cookie-cake">
+                </div>
+                <div class="container-heading"><p>Cookie Cake</p></div>
+                <div class="container-description">
+                    <p>A giant chocolate chip cookie baked to perfection, topped with creamy frosting and chocolate drizzle.</p>
+                </div>
+                    
+                   <div class="container-order flex-row">
+                    <div class="price"><p>$8</p></div>
+                    <button class="order-button" type="button"onclick="orderPreset('cookie-cake')">Order Now</button>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="container-img">
+                    <img src="images /cinn-roll.png" alt="cinn-roll">
+                </div>
+                <div class="container-heading"> <p>Cinnamon Roll</p></div>
+                <div class="container-description">
+                    <p>Warm, soft cinnamon roll swirled with brown sugar and topped with sweet cream cheese icing.</p>
+                </div>
+                  <div class="container-order flex-row">
+                    <div class="price"><p>$5</p></div>
+                    <button class="order-button" type="button" onclick="orderPreset('cinn-roll')">Order Now</button>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+</body>
+
+<footer id="about">
+  <p>&copy; Slice City 2026: <a href="#" style="color: beige;">Follow Us On Instagram</a></p>
+  <a href="https://images.pexels.com/photos/4109050/pexels-photo-4109050.jpeg" target="_blank" style="color: beige;">Image Credit</a>
+  
+</footer>
+
+<script src="index.js">
+
+</script>
+</html>

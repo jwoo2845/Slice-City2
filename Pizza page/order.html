@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="main.css" rel="stylesheet">
+    <title>Slice City</title>
+</head>
+<body>
+<nav>
+    <div class="navlinks">
+    <div><a href="#about">About Us</a></div>
+    <div><a href="index.html">Order Now</a></div>
+    </div>
+    <div>
+         <a href="order.html"><img src="images /shoppingcart.png" alt="shopping cart" width="150px"></a>
+    </div>
+    
+    
+</nav>
+<header class="flex-row even-space head">
+    <div class="title">
+        <h1>Slice City</h1>
+         <p style="color: beige;">Where every slice hits different!</p>
+    </div>
+    
+    <video autoplay muted loop playsinline class="bg-video">
+    <source src="images /video.mp4" type="video/mp4">
+    </video>
+</header>
+<main>
+<div class="order-container">
+
+  <h1 class="box">Your Order</h1>
+
+  <div class="order-box">
+    <div class="order-row">
+      <span>Size</span>
+      <span id="size"></span>
+    </div>
+
+    <div class="order-row">
+      <span>Sauce</span>
+      <span id="sauce"></span>
+    </div>
+
+    <div class="order-row">
+      <span>Toppings</span>
+      <span id="toppings"></span>
+    </div>
+
+    <hr>
+
+    <div class="order-row total">
+      <span>Total</span>
+      <span>$<span id="price"></span></span>
+    </div>
+  </div>
+
+  <form class="order-form">
+    <h2 class="box">Customer Info</h2>
+
+    <input type="text" placeholder="Full Name" required>
+    <input type="email" placeholder="Email Address" required>
+    <input type="tel" placeholder="Phone Number" required>
+
+    <div class="delivery-options">
+      <label class="box">
+        <input type="radio" name="delivery" > Pickup
+      </label>
+      <label class="box">
+        <input type="radio" name="delivery"> Delivery
+      </label>
+    </div>
+
+    <button type="button" onclick="submitOrder()">Place Order</button>
+  </form>
+
+</div>
+</main>
+
+
+<script>
+const order = JSON.parse(localStorage.getItem("pizzaOrder"));
+
+if (!order) {
+  document.body.innerHTML = "<h2>No order found. Go back and create one.</h2>";
+} else {
+
+  let price = 0;
+
+  // pizza
+  if (order.category === "pizza") {
+
+    document.getElementById("size").textContent =
+      order.size ? order.size.charAt(0).toUpperCase() + order.size.slice(1) : "N/A";
+
+    document.getElementById("sauce").textContent =
+      order.sauce || "None";
+
+    document.getElementById("toppings").textContent =
+      order.toppings.length ? order.toppings.join(", ") : "None";
+
+    if (order.size === "small") price = 8;
+    if (order.size === "medium") price = 10;
+    if (order.size === "large") price = 12;
+    if (order.size === "xl") price = 14;
+  }
+
+  //dessert
+  else if (order.category === "dessert") {
+
+    document.getElementById("size").textContent = "Dessert";
+    document.getElementById("sauce").textContent = "N/A";
+    document.getElementById("toppings").textContent = order.item;
+
+    price = order.price;
+  }
+
+  document.getElementById("price").textContent = price;
+}
+
+function submitOrder() {
+  alert("Order placed successfully!");
+  localStorage.removeItem("pizzaOrder");
+}
+</script>
+</script>
+<footer id="about">
+  <p>&copy; Slice City 2026</p>
+  <a href="https://images.pexels.com/photos/4109050/pexels-photo-4109050.jpeg" target="_blank" style="color: beige;">Image Credit</a>
+  <a href="#" style="color: beige;">Follow Us On Instagram</a>
+</footer>
+
+</body>
+</html>
